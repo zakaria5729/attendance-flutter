@@ -40,7 +40,7 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/logos/app_logo.png
+  image: assets/logos/app_logo.jpg
   android: true
   ios: true
 
@@ -48,7 +48,7 @@ flutter_icons:
   android: true
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/logos/app_logo.png"
+  image_path: "assets/logos/app_logo.jpg"
 
 flutter:
   uses-material-design: true
