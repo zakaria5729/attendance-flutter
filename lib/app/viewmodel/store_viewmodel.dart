@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../shared/utils/extensions.dart';
 import '../state/store/store_state.dart';
+import '../../shared/utils/extensions.dart';
 import '../repository/store_respository/store_repository.dart';
 
 final storeViewModelProvider =
