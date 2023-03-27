@@ -14,7 +14,6 @@ final locationObjectProvider = Provider<Location>((ref) {
 
 final apiClientProvider = Provider<ApiClient>((ref) {
   return ApiClient(
-    ref.read,
     ref.watch(connectivityProvider),
   );
 });

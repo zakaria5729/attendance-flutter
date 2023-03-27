@@ -1,15 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../shared/utils/extensions.dart';
 import '../model/attendance_request/attendance_request.dart';
 
-final attendanceRequestViewModelProvider = StateNotifierProvider.autoDispose<
-    _AttendanceRequestViewModel, AttendanceRequest>((ref) {
-  return _AttendanceRequestViewModel();
-});
-
-class _AttendanceRequestViewModel extends StateNotifier<AttendanceRequest> {
-  _AttendanceRequestViewModel() : super(const AttendanceRequest());
+class AttendanceRequestViewModel extends StateNotifier<AttendanceRequest> {
+  AttendanceRequestViewModel() : super(const AttendanceRequest()) {
+    state = state.copyWith(requestId: Uuid().v1());
+  }
 
   void setName(String? value) {
     state = state.copyWith(name: value);
@@ -25,3 +23,8 @@ class _AttendanceRequestViewModel extends StateNotifier<AttendanceRequest> {
 
   AttendanceRequest getState() => state;
 }
+
+final attendanceRequestViewModelProvider = StateNotifierProvider.autoDispose<
+    AttendanceRequestViewModel, AttendanceRequest>((ref) {
+  return AttendanceRequestViewModel();
+});

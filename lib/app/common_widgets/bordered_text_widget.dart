@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/utils/extensions.dart';
 import '../../app/values/app_colors.dart';
 
 class BorderedTextWidget extends StatelessWidget {

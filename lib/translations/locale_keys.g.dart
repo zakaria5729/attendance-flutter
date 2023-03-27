@@ -4,6 +4,7 @@ abstract class  LocaleKeys {
   static const name = 'name';
   static const submit = 'submit';
   static const stores = 'stores';
+  static const userId = 'userId';
   static const dismiss = 'dismiss';
   static const tryAgain = 'tryAgain';
   static const attendance = 'attendance';

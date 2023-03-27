@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/adapter.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../../app/values/constants.dart';
@@ -14,20 +13,17 @@ import '../../shared/network/interceptors/dio_interceptor_wrapper.dart';
 
 class ApiClient {
   late final Dio _dio;
-  final Reader _reader;
   late final String _baseUrl;
   final Connectivity _connectivity;
 
-  ApiClient(
-    this._reader,
-    this._connectivity,
-  ) {
+  ApiClient(this._connectivity) {
     _baseUrl = getBaseUrl;
 
     _dio = Dio();
     setDefaultTimeout();
 
     _dio.interceptors.clear();
+    _dio.setDioLogger();
     _dio.interceptors.add(
       DioInterceptorWrapper(_connectivity),
     );

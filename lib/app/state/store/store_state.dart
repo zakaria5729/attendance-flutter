@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../model/store_data/store_data.dart';
+import '../../model/stores_response/stores_response.dart';
 
 part 'store_state.freezed.dart';
 

@@ -5,15 +5,8 @@ import '../state/store/store_state.dart';
 import '../../shared/utils/extensions.dart';
 import '../repository/store_respository/store_repository.dart';
 
-final storeViewModelProvider =
-    StateNotifierProvider.autoDispose<_StoreViewModelNotifier, StoreState>(
-  (ref) => _StoreViewModelNotifier(
-    ref.watch(storeRepositoryProvider),
-  ),
-);
-
-class _StoreViewModelNotifier extends StateNotifier<StoreState> {
-  _StoreViewModelNotifier(this._storeRepository)
+class StoreViewModelNotifier extends StateNotifier<StoreState> {
+  StoreViewModelNotifier(this._storeRepository)
       : super(StoreState(isLoading: true)) {
     getAllStoresPaginated();
   }
@@ -78,3 +71,8 @@ class _StoreViewModelNotifier extends StateNotifier<StoreState> {
     return state.data.isBlank && !state.error.isBlank;
   }
 }
+
+final storeViewModelProvider = StateNotifierProvider.autoDispose<StoreViewModelNotifier, StoreState>((ref) => StoreViewModelNotifier(
+    ref.watch(storeRepositoryProvider),
+  ),
+);

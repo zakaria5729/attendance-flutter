@@ -12,9 +12,9 @@ String get getBaseUrl {
       return "http://128.199.215.102:4040/api";
 
     case Environment.STAGING:
-      return "https://api.tazkia.dhrubok.me/api";
+      return "http://128.199.215.102:4040/api";
 
     case Environment.PRODUCTION:
-      return "https://api.tazkiafoundation.com/api";
+      return "http://128.199.215.102:4040/api";
   }
 }

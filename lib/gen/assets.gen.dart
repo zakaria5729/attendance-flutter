@@ -33,8 +33,8 @@ class $AssetsIconsGen {
 class $AssetsLogosGen {
   const $AssetsLogosGen();
 
-  /// File path: assets/logos/app_logo.png
-  AssetGenImage get appLogo => const AssetGenImage('assets/logos/app_logo.png');
+  /// File path: assets/logos/app_logo.jpg
+  AssetGenImage get appLogo => const AssetGenImage('assets/logos/app_logo.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [appLogo];

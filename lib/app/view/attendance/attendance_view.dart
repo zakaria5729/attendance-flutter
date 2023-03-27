@@ -17,7 +17,12 @@ import '../../state/attendance/attendance_state.dart';
 import '../../viewmodel/attendance_request_viewmodel.dart';
 
 class AttendanceView extends ConsumerWidget {
-  const AttendanceView({Key? key}) : super(key: key);
+  const AttendanceView({
+    Key? key,
+    required this.storeName,
+  }) : super(key: key);
+
+  final String storeName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,7 +39,7 @@ class AttendanceView extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBarWidget(
-        title: LocaleKeys.attendance.tr(),
+        title: "$storeName ${LocaleKeys.attendance.tr()}",
         elevation: 1,
       ),
       body: LayoutBuilder(
@@ -55,9 +60,9 @@ class AttendanceView extends ConsumerWidget {
                         label: LocaleKeys.name.tr(),
                         hint: LocaleKeys.name.tr(),
                         prefixIconColor: colorGrey,
-                        textInputAction: TextInputAction.next,
                         textInputType: TextInputType.text,
                         contentPadding: EdgeInsets.all(16),
+                        textInputAction: TextInputAction.next,
                         inputDecorationBorder: OutlineInputBorder(),
                         onChanged: requestViewModelNotifier.setName,
                       ),
@@ -65,12 +70,12 @@ class AttendanceView extends ConsumerWidget {
                         height: 5,
                       ),
                       TextFormFieldWidget(
-                        label: LocaleKeys.name.tr(),
-                        hint: LocaleKeys.name.tr(),
+                        label: LocaleKeys.userId.tr(),
+                        hint: LocaleKeys.userId.tr(),
                         prefixIconColor: colorGrey,
-                        textInputAction: TextInputAction.done,
                         textInputType: TextInputType.text,
                         contentPadding: EdgeInsets.all(16),
+                        textInputAction: TextInputAction.done,
                         inputDecorationBorder: OutlineInputBorder(),
                         onChanged: requestViewModelNotifier.setUserId,
                       ),
@@ -103,7 +108,7 @@ class AttendanceView extends ConsumerWidget {
     ref.listen<AttendanceState>(attendanceViewModelProvider, (previous, next) {
       next.whenOrNull(
         data: (data) {
-          data.message?.showSnackBar(context, ref);
+          data.userMessage?.showSnackBar(context, ref);
         },
         error: (error) async {
           if (error == LocaleKeys.locationDisabled.tr()) {

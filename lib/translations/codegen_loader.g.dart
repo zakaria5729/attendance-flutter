@@ -18,6 +18,7 @@ class CodegenLoader extends AssetLoader{
   "name": "Name",
   "submit": "Submit",
   "stores": "Stores",
+  "userId": "User Id",
   "dismiss": "Dismiss",
   "tryAgain": "Try again",
   "attendance": "Attendance",

@@ -1,12 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../shared/utils/extensions.dart';
 import '../../gen/assets.gen.dart';
 import '../../shared/utils/util.dart';
+import '../values/app_colors.dart';
 import '../values/app_font_size.dart';
-import '../values/constants.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({
@@ -54,7 +53,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
-    final locale = context.locale.languageCode;
 
     return AppBar(
       key: key,
@@ -86,13 +84,10 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           ? IconButton(
               icon: Padding(
                 padding: const EdgeInsets.only(left: 5),
-                child: RotatedBox(
-                  quarterTurns: locale == languageCodeLocales[2] ? 2 : 0,
-                  child: Assets.icons.backArrowIcon.image(
-                    width: 16,
-                    height: 16,
-                    color: navBackIconColor ?? themeData.iconTheme.color,
-                  ),
+                child: Assets.icons.backArrowIcon.image(
+                  width: 16,
+                  height: 16,
+                  color: navBackIconColor ?? colorWhite,
                 ),
               ),
               alignment: Alignment.centerLeft,

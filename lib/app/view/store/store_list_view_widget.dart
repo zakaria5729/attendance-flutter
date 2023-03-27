@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 
 import '../../common_widgets/circular_progress_widget.dart';
 import '../../common_widgets/text_widget.dart';
+import '../../model/stores_response/stores_response.dart';
 import '../../routes/route_paths.dart';
 import '../../values/app_font_size.dart';
-import '../../model/store_data/store_data.dart';
 
 class StoreListViewWidget extends StatelessWidget {
   const StoreListViewWidget({
@@ -35,11 +35,12 @@ class StoreListViewWidget extends StatelessWidget {
               physics: const AlwaysScrollableScrollPhysics(),
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               itemBuilder: (context, index) {
-                final data = storeData[index];
+                final store = storeData[index];
 
                 return GestureDetector(
                   onTap: () => context.push(
                     routeAttendance,
+                    extra: store.name,
                   ),
                   child: Container(
                     padding: EdgeInsets.all(24),
@@ -51,7 +52,7 @@ class StoreListViewWidget extends StatelessWidget {
                       ),
                     ),
                     child: TextWidget(
-                      data.name,
+                      store.name,
                       fontSize: fontSize20,
                     ),
                   ),

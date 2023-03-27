@@ -8,20 +8,11 @@ import 'attendance_request_viewmodel.dart';
 import '../state/attendance/attendance_state.dart';
 import '../repository/attendance_respository/attendance_respository.dart';
 
-final attendanceViewModelProvider =
-    StateNotifierProvider.autoDispose<_AttendanceViewModel, AttendanceState>(
-        (ref) {
-  return _AttendanceViewModel(
-    ref.read,
-    ref.watch(attendanceRepositoryProvider),
-  );
-});
-
-class _AttendanceViewModel extends StateNotifier<AttendanceState> {
+class AttendanceViewModel extends StateNotifier<AttendanceState> {
   final Reader _reader;
   final AttendanceRepository _attendanceRepository;
 
-  _AttendanceViewModel(
+  AttendanceViewModel(
     this._reader,
     this._attendanceRepository,
   ) : super(const AttendanceState.initial());
@@ -74,3 +65,10 @@ class _AttendanceViewModel extends StateNotifier<AttendanceState> {
     }
   }
 }
+
+final attendanceViewModelProvider = StateNotifierProvider.autoDispose<AttendanceViewModel, AttendanceState>((ref) {
+  return AttendanceViewModel(
+    ref.read,
+    ref.watch(attendanceRepositoryProvider),
+  );
+});

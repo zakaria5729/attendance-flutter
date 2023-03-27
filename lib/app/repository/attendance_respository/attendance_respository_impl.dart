@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 import 'attendance_respository.dart';
 import '../../values/api_endpoints.dart';
 import '../../../shared/network/api_client.dart';
@@ -13,9 +15,13 @@ class AttendanceRepositoryImpl implements AttendanceRepository {
   Future<AttendanceState> attendance(
     AttendanceRequest attendanceRequest,
   ) async {
+    final formDataRequest = FormData.fromMap(
+      attendanceRequest.toJson(),
+    );
+
     final response = await _apiClient.postRequest(
       attendanceApi,
-      attendanceRequest.toJson(),
+      formDataRequest,
       checkStatusCodeOnly: true,
     );
 
