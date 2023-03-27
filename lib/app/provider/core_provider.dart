@@ -7,7 +7,6 @@ final connectivityProvider = Provider<Connectivity>((ref) {
   return Connectivity();
 });
 
-
 final apiClientProvider = Provider<ApiClient>((ref) {
   return ApiClient(
     ref.read,
