@@ -1,6 +1,6 @@
 # Attendance-App
 
-An attendance app Flutter project.
+An attendance app developed by **Riverpod**, **Dio**, **GoRouter**, **EasyLocalization**, **Freezed**, **Location**, **ConnectivityPlus**, **FlutterGen** etc.
 
 - Project run command: flutter run
 - Apk run command: flutter build apk
