@@ -19,6 +19,17 @@ class $AssetsFontsGen {
   List<String> get values => [ageo];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/back_arrow_icon.png
+  AssetGenImage get backArrowIcon =>
+      const AssetGenImage('assets/icons/back_arrow_icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [backArrowIcon];
+}
+
 class $AssetsLogosGen {
   const $AssetsLogosGen();
 
@@ -43,6 +54,7 @@ class Assets {
   Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsLogosGen logos = $AssetsLogosGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
