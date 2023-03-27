@@ -20,8 +20,8 @@ StoresResponse _$StoresResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StoresResponse {
-  List<StoreData> get data => throw _privateConstructorUsedError;
   StoreMeta? get meta => throw _privateConstructorUsedError;
+  List<StoreData> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $StoresResponseCopyWith<$Res> {
           StoresResponse value, $Res Function(StoresResponse) then) =
       _$StoresResponseCopyWithImpl<$Res, StoresResponse>;
   @useResult
-  $Res call({List<StoreData> data, StoreMeta? meta});
+  $Res call({StoreMeta? meta, List<StoreData> data});
 
   $StoreMetaCopyWith<$Res>? get meta;
 }
@@ -53,18 +53,18 @@ class _$StoresResponseCopyWithImpl<$Res, $Val extends StoresResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
     Object? meta = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<StoreData>,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as StoreMeta?,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<StoreData>,
     ) as $Val);
   }
 
@@ -89,7 +89,7 @@ abstract class _$$_StoresResponseCopyWith<$Res>
       __$$_StoresResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<StoreData> data, StoreMeta? meta});
+  $Res call({StoreMeta? meta, List<StoreData> data});
 
   @override
   $StoreMetaCopyWith<$Res>? get meta;
@@ -106,18 +106,18 @@ class __$$_StoresResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
     Object? meta = freezed,
+    Object? data = null,
   }) {
     return _then(_$_StoresResponse(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<StoreData>,
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as StoreMeta?,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<StoreData>,
     ));
   }
 }
@@ -125,12 +125,14 @@ class __$$_StoresResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_StoresResponse implements _StoresResponse {
-  const _$_StoresResponse({final List<StoreData> data = const [], this.meta})
+  const _$_StoresResponse({this.meta, final List<StoreData> data = const []})
       : _data = data;
 
   factory _$_StoresResponse.fromJson(Map<String, dynamic> json) =>
       _$$_StoresResponseFromJson(json);
 
+  @override
+  final StoreMeta? meta;
   final List<StoreData> _data;
   @override
   @JsonKey()
@@ -141,11 +143,8 @@ class _$_StoresResponse implements _StoresResponse {
   }
 
   @override
-  final StoreMeta? meta;
-
-  @override
   String toString() {
-    return 'StoresResponse(data: $data, meta: $meta)';
+    return 'StoresResponse(meta: $meta, data: $data)';
   }
 
   @override
@@ -153,14 +152,14 @@ class _$_StoresResponse implements _StoresResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StoresResponse &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
-            (identical(other.meta, meta) || other.meta == meta));
+            (identical(other.meta, meta) || other.meta == meta) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_data), meta);
+      runtimeType, meta, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -178,15 +177,15 @@ class _$_StoresResponse implements _StoresResponse {
 
 abstract class _StoresResponse implements StoresResponse {
   const factory _StoresResponse(
-      {final List<StoreData> data, final StoreMeta? meta}) = _$_StoresResponse;
+      {final StoreMeta? meta, final List<StoreData> data}) = _$_StoresResponse;
 
   factory _StoresResponse.fromJson(Map<String, dynamic> json) =
       _$_StoresResponse.fromJson;
 
   @override
-  List<StoreData> get data;
-  @override
   StoreMeta? get meta;
+  @override
+  List<StoreData> get data;
   @override
   @JsonKey(ignore: true)
   _$$_StoresResponseCopyWith<_$_StoresResponse> get copyWith =>

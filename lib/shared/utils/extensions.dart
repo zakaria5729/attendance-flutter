@@ -9,6 +9,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../../app/model/common/common_response.dart';
 import '../../app/model/error/error_response.dart';
+import '../../app/provider/core_provider.dart';
 import '../../app/values/app_colors.dart';
 import '../../app/values/app_font_size.dart';
 import '../../shared/network/api_response/api_response.dart';
