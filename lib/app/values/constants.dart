@@ -1,2 +1,4 @@
-const int dioDefaultTimeout = 15000; // 15 sec
-const int dioMaximumTimeout = 600000; // 10 min
+const int dioDefaultTimeout = 15000;
+const int dioMaximumTimeout = 600000;
+
+const languageCodeLocales = ["en"];
