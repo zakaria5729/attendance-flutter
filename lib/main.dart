@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'app/common_widgets/text_widget.dart';
 import 'app/my_app.dart';
 import 'app/values/app_colors.dart';
 import 'app/values/constants.dart';

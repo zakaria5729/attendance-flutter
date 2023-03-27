@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 const fontSize14 = 14.0;
 const fontSize16 = 16.0;
+const fontSize20 = 20.0;
 
 const boldFontWeight = FontWeight.w700;
 const lightFontWeight = FontWeight.w300;
