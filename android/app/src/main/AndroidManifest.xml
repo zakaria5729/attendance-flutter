@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.attendance">
+    package="com.zakaria.attendance">
    <application
         android:label="attendance"
         android:name="${applicationName}"
