@@ -34,7 +34,7 @@ class AttendanceView extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBarWidget(
-        title: LocaleKeys.login.tr(),
+        title: LocaleKeys.attendance.tr(),
         elevation: 1,
       ),
       body: LayoutBuilder(

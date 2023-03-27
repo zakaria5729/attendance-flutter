@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../translations/locale_keys.g.dart';
 import '../../common_widgets/appbar_widget.dart';
 import '../../common_widgets/circular_progress_widget.dart';
 import '../../common_widgets/error_retry_widget.dart';
@@ -48,7 +50,7 @@ class _StoreViewState extends ConsumerState<StoreView> {
 
     return Scaffold(
       appBar: AppBarWidget(
-        title: "Stores",
+        title: LocaleKeys.stores.tr(),
         elevation: 1,
         isShowNavBackIcon: false,
       ),
