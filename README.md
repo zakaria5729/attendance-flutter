@@ -1,6 +1,10 @@
-# attendance
+# Attendance-App
 
-A new Flutter project.
+An attendance app Flutter project.
+
+- Project run command: flutter run
+- Apk run command: flutter build apk
+- Bundle run command: flutter build appbundle
 
 ## Getting Started
 
